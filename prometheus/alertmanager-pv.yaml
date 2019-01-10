@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: alertmanager-pv
+  namespace: kube-system
+  labels:
+    type: local
+spec:
+  storageClassName: alertmanager
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/home/alertmanagerdata"
